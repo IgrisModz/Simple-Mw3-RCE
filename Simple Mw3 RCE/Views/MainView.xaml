@@ -1,0 +1,253 @@
+﻿<UserControl x:Class="Simple_Mw3_RCE.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+             xmlns:core="clr-namespace:Simple_Mw3_RCE.Core"
+             xmlns:viewModels="clr-namespace:Simple_Mw3_RCE.ViewModels"
+             mc:Ignorable="d"
+             dialog:DialogParticipation.Register="{Binding}"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModels:MainViewModel/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <system:Boolean x:Key="True">True</system:Boolean>
+        <system:Boolean x:Key="False">False</system:Boolean>
+        <Style TargetType="{x:Type ListBox}" BasedOn="{StaticResource MahApps.Styles.ListBox}">
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        <Style TargetType="{x:Type GroupBox}" BasedOn="{StaticResource MahApps.Styles.GroupBox}">
+            <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource MahApps.Styles.Label}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MahApps.Styles.Button}">
+            <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Normal"/>
+            <Setter Property="mah:ControlsHelper.CornerRadius" Value="0"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        <Style TargetType="{x:Type iconPacks:PackIconMaterialDesign}">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="13"/>
+            <Setter Property="Width" Value="13"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2.2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Menu x:Name="MainMenuBar" IsMainMenu="True" Grid.ColumnSpan="2">
+            <MenuItem x:Name="ApiItem" Header="Api">
+                <MenuItem.Icon>
+                    <iconPacks:PackIconMaterialDesign Kind="SettingsEthernet"/>
+                </MenuItem.Icon>
+                <MenuItem x:Name="TmapiItem" Header="Target Manager" InputGestureText="TMAPI (DEX)" Command="{Binding SetTMAPICommand}">
+                    <MenuItem.Icon>
+                        <iconPacks:PackIconMaterialDesign Kind="SettingsEthernet"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="CcapiItem" Header="Control Console" InputGestureText="CCAPI (DEX/CEX)" Command="{Binding SetCCAPICommand}">
+                    <MenuItem.Icon>
+                        <iconPacks:PackIconMaterialDesign Kind="SettingsEthernet"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="Ps3mapiItem" Header="PS3 Manager" InputGestureText="PS3MAPI (DEX/CEX/HEN)" Command="{Binding SetPS3MAPICommand}">
+                    <MenuItem.Icon>
+                        <iconPacks:PackIconMaterialDesign Kind="SettingsEthernet"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="ConnectionItem" Header="{DynamicResource connect}" Command="{Binding ConnectionCommand}">
+                <MenuItem.Icon>
+                    <iconPacks:PackIconMaterialDesign Kind="CastConnected"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </Menu>
+        <StatusBar x:Name="StatusBar" Grid.Row="2" Grid.ColumnSpan="2">
+            <StatusBarItem x:Name="CreatorItem" HorizontalAlignment="Right" Content="{DynamicResource creator}"/>
+        </StatusBar>
+        <Grid Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ListBox x:Name="PlayersList" SelectionMode="Single" DisplayMemberPath="Name"
+                      ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}"/>
+            <Button x:Name="GetPlayersButton" Grid.Row="1" Command="{Binding GetPlayersCommand}">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <iconPacks:PackIconMaterialDesign Kind="Refresh"/>
+                        <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource getPlayers}"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+        </Grid>
+        <GroupBox x:Name="ModzGroup" Grid.Column="1" Grid.Row="1" Header="Modz">
+            <Grid Margin="-3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label VerticalContentAlignment="Center" Content="{DynamicResource godmode}"/>
+                <Button Name="GodmodeOnButton" Grid.Row="1" Command="{Binding SetGodmodeCommand}" CommandParameter="{x:Static core:DamageFlag.GodModeNoKBwB}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                            <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource give}"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Name="GodmodeOffButton" Grid.Column="1" Grid.Row="1" Command="{Binding SetGodmodeCommand}" CommandParameter="{x:Static core:DamageFlag.None}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                            <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource remove}"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Label Grid.Row="2" VerticalContentAlignment="Center" Content="{DynamicResource movementType}"/>
+                <UniformGrid Grid.Row="3" Grid.ColumnSpan="2" Columns="4">
+                    <Button Name="MoveUfoButton" Command="{Binding SetMovementCommand}" CommandParameter="{x:Static core:MovementType.UFO}">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                                <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource ufo}"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Name="MoveNoclipButton" Command="{Binding SetMovementCommand}" CommandParameter="{x:Static core:MovementType.Noclip}">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                                <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource noclip}"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Name="MoveFreezeButton" Command="{Binding SetMovementCommand}" CommandParameter="{x:Static core:MovementType.Freeze}">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                                <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource freeze}"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Name="MoveNormalButton" Command="{Binding SetMovementCommand}" CommandParameter="{x:Static core:MovementType.None}">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                                <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource none}"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </UniformGrid>
+                <Label Grid.Row="4" VerticalContentAlignment="Center" Content="{DynamicResource invisibility}"/>
+                <Button Name="InvisibilityOnButton" Grid.Row="5" Command="{Binding SetInvisibilityCommand}" CommandParameter="{StaticResource True}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                            <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource give}"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Name="InvisibilityOffButton" Grid.Column="1" Grid.Row="5" Command="{Binding SetInvisibilityCommand}" CommandParameter="{StaticResource False}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                            <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource remove}"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Label Grid.Row="6" VerticalContentAlignment="Center" Content="{DynamicResource redboxes}"/>
+                <Button Name="RedboxesOnButton" Grid.Row="7" Command="{Binding GiveRedboxesCommand}" CommandParameter="{StaticResource True}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                            <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource give}"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Name="RedboxesOffButton" Grid.Column="1" Grid.Row="7" Command="{Binding GiveRedboxesCommand}" CommandParameter="{StaticResource False}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                            <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource remove}"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Label Grid.Row="8" VerticalContentAlignment="Center" Content="{DynamicResource killOnSpawn}"/>
+                <Button Name="SpawnKillOnButton" Grid.Row="9" Command="{Binding GiveSpawnKillCommand}" CommandParameter="{StaticResource True}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                            <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="On"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Name="SpawnKillOffButton" Grid.Column="1" Grid.Row="9" Command="{Binding GiveSpawnKillCommand}" CommandParameter="{StaticResource False}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                            <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="Off"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Label Grid.Row="10" VerticalContentAlignment="Center" Content="{DynamicResource suicide}"/>
+                <Button Name="SuicideOnButton" Grid.Row="11" Grid.ColumnSpan="2" Command="{Binding SuicideCommand}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                            <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource set}"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Label Grid.Row="12" VerticalContentAlignment="Center" Content="{DynamicResource infiniteAmmo}"/>
+                <Button Name="InfiniteAmmoOnButton" Grid.Row="13" Command="{Binding SetInfiniteAmmoCommand}" CommandParameter="{StaticResource True}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                            <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource give}"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Name="InfiniteAmmoOffButton" Grid.Column="1" Grid.Row="13" Command="{Binding SetInfiniteAmmoCommand}" CommandParameter="{StaticResource False}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterialDesign Kind="Send"/>
+                            <TextBlock Margin="3 0 0 0" VerticalAlignment="Center" Text="{DynamicResource remove}"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

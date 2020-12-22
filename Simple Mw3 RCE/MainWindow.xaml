@@ -1,0 +1,14 @@
+﻿<mah:MetroWindow x:Class="Simple_Mw3_RCE.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:views="clr-namespace:Simple_Mw3_RCE.Views"
+                 mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+                 Title="Simple Mw3 RCE Exploit" TitleCharacterCasing="Normal"
+                 MinHeight="554" MinWidth="680" Height="554" Width="690">
+    <Grid>
+        <views:MainView/>
+    </Grid>
+</mah:MetroWindow>

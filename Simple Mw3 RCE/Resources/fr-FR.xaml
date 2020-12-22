@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="creator">Créé par Igris Modz</system:String>
+    <system:String x:Key="connect">Connexion</system:String>
+    <system:String x:Key="getPlayers">Rafraîchir les joueurs</system:String>
+    <system:String x:Key="give">Donner</system:String>
+    <system:String x:Key="remove">Retirer</system:String>
+    <system:String x:Key="set">Activer</system:String>
+    <system:String x:Key="godmode">Godmode</system:String>
+    <system:String x:Key="movementType">Type de mouvement</system:String>
+    <system:String x:Key="ufo">OVNI</system:String>
+    <system:String x:Key="noclip">Passe muraille</system:String>
+    <system:String x:Key="freeze">Geler</system:String>
+    <system:String x:Key="none">Aucun</system:String>
+    <system:String x:Key="invisibility">Invisibilité</system:String>
+    <system:String x:Key="redboxes">Boîtes rouges</system:String>
+    <system:String x:Key="killOnSpawn">Tuer lors de l'apparition</system:String>
+    <system:String x:Key="suicide">Suicide</system:String>
+    <system:String x:Key="infiniteAmmo">Munitions infini</system:String>
+
+    <system:String x:Key="success">Succès..</system:String>
+    <system:String x:Key="wrongProcess">Mauvais processus..</system:String>
+    <system:String x:Key="attachFailed">L'attachement a échoué..</system:String>
+    <system:String x:Key="connectFailed">Echec de connexion..</system:String>
+    <system:String x:Key="successAttached">Attaché avec succès à</system:String>
+    <system:String x:Key="currentProcess">Le processus est</system:String>
+    <system:String x:Key="unableAttach">Impossible de joindre le processus.</system:String>
+    <system:String x:Key="unableConnect">Impossible de se connecter à la PS3.</system:String>
+
+    <system:String x:Key="functionsFailed">Les fonctions ont échoué..</system:String>
+    <system:String x:Key="mustBeInGame">Vous devez être en jeu pour utiliser les fonctions.</system:String>
+    <system:String x:Key="installRCE">Si vous n'êtes pas hébergeur, vous devez installer le rce sprx.</system:String>
+</ResourceDictionary>

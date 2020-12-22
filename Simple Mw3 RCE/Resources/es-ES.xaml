@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="creator">Creado por Igris Modz</system:String>
+    <system:String x:Key="connect">Conexión</system:String>
+    <system:String x:Key="getPlayers">Actualizar jugadores</system:String>
+    <system:String x:Key="give">Dar</system:String>
+    <system:String x:Key="remove">Retirar</system:String>
+    <system:String x:Key="set">Activar</system:String>
+    <system:String x:Key="godmode">Invencible</system:String>
+    <system:String x:Key="movementType">Tipo de movimiento</system:String>
+    <system:String x:Key="ufo">OVNI</system:String>
+    <system:String x:Key="noclip">Pase de pared</system:String>
+    <system:String x:Key="freeze">Congelar</system:String>
+    <system:String x:Key="none">Ninguno</system:String>
+    <system:String x:Key="invisibility">Invisibilidad</system:String>
+    <system:String x:Key="redboxes">Cajas rojas</system:String>
+    <system:String x:Key="killOnSpawn">Mata al desovar</system:String>
+    <system:String x:Key="suicide">Suicidio</system:String>
+    <system:String x:Key="infiniteAmmo">Munición infinita</system:String>
+
+    <system:String x:Key="success">Éxito..</system:String>
+    <system:String x:Key="wrongProcess">Proceso incorrecto..</system:String>
+    <system:String x:Key="attachFailed">Adjuntar falló..</system:String>
+    <system:String x:Key="connectFailed">Conexión fallida..</system:String>
+    <system:String x:Key="successAttached">Adjunto con éxito a</system:String>
+    <system:String x:Key="currentProcess">The process is</system:String>
+    <system:String x:Key="unableAttach">No se puede adjuntar el proceso.</system:String>
+    <system:String x:Key="unableConnect">No se puede conectar a PS3.</system:String>
+
+    <system:String x:Key="functionsFailed">Las funciones fallaron..</system:String>
+    <system:String x:Key="mustBeInGame">Debes estar en el juego para usar las funciones.</system:String>
+    <system:String x:Key="installRCE">Si no eres anfitrión debes instalar el rce sprx.</system:String>
+</ResourceDictionary>

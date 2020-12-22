@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Simple_Mw3_RCE.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="API" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TMAPI</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

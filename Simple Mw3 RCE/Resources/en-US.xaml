@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="creator">Created by Igris Modz</system:String>
+    <system:String x:Key="connect">Connection</system:String>
+    <system:String x:Key="getPlayers">Refresh players</system:String>
+    <system:String x:Key="give">Give</system:String>
+    <system:String x:Key="remove">Remove</system:String>
+    <system:String x:Key="set">Set</system:String>
+    <system:String x:Key="godmode">Godmode</system:String>
+    <system:String x:Key="movementType">Movement type</system:String>
+    <system:String x:Key="ufo">UFO</system:String>
+    <system:String x:Key="noclip">Noclip</system:String>
+    <system:String x:Key="freeze">Freeze</system:String>
+    <system:String x:Key="none">None</system:String>
+    <system:String x:Key="invisibility">Invisibility</system:String>
+    <system:String x:Key="redboxes">Redboxes</system:String>
+    <system:String x:Key="killOnSpawn">Kill on spawn</system:String>
+    <system:String x:Key="suicide">Suicide</system:String>
+    <system:String x:Key="infiniteAmmo">Infinite ammo</system:String>
+
+    <system:String x:Key="success">Success..</system:String>
+    <system:String x:Key="wrongProcess">Wrong process..</system:String>
+    <system:String x:Key="attachFailed">Attach failed..</system:String>
+    <system:String x:Key="connectFailed">Connect failed..</system:String>
+    <system:String x:Key="successAttached">Successfully attached to</system:String>
+    <system:String x:Key="currentProcess">The process is</system:String>
+    <system:String x:Key="unableAttach">Unable to attach process.</system:String>
+    <system:String x:Key="unableConnect">Unable to connect to PS3.</system:String>
+
+    <system:String x:Key="functionsFailed">Functions failed..</system:String>
+    <system:String x:Key="mustBeInGame">You must be in-game to use the functions.</system:String>
+    <system:String x:Key="installRCE">If you're not host you must install the rce sprx.</system:String>
+</ResourceDictionary>

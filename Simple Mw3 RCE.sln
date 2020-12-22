@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple Mw3 RCE", "Simple Mw3 RCE\Simple Mw3 RCE.csproj", "{AD1A8559-6627-45AE-97E9-3B19485CB260}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD1A8559-6627-45AE-97E9-3B19485CB260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1A8559-6627-45AE-97E9-3B19485CB260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1A8559-6627-45AE-97E9-3B19485CB260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD1A8559-6627-45AE-97E9-3B19485CB260}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52BA1E77-206D-4AC6-8C31-F67E98F82F5A}
+	EndGlobalSection
+EndGlobal
